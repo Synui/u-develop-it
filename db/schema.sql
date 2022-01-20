@@ -1,12 +1,14 @@
 DROP TABLE IF EXISTS candidates;
 DROP TABLE IF EXISTS parties;
 
+-- Parties must go 1st in order to populate candidates table through foreign key
 CREATE TABLE parties (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   description TEXT
 );
 
+-- Since candidates is the primary key it must go last
 CREATE TABLE candidates (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
